@@ -8,5 +8,5 @@ function draw() {
 function draw() {
   circle(50,100,30);
   circle(150,100,30);
-  arc(200,200,80,80,0,PI);
+  arc(100,200,80,80,0,PI);
 }
