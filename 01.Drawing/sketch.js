@@ -6,5 +6,7 @@ function draw() {
   background(220);
 }
 function draw() {
-  circle(200,200,50);
+  circle(50,100,30);
+  circle(150,100,30);
+  arc(200,200,80,80,0,PI);
 }
