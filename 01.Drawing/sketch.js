@@ -1,12 +1,23 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
+  frameRate(1);
+  
 }
 
 function draw() {
-  background(220);
-}
-function draw() {
-  circle(50,100,30);
-  circle(150,100,30);
-  arc(100,200,80,80,0,PI);
-}
+  background(255,255,255);
+  let point_x = random(0,500);
+  let point_y = random(0,500);
+  let point_x2 = random(0,500);
+  let point_y2 = random(0,500);
+  
+  for (let i=0; i<5; i=i+1){
+  stroke(random(255),random(255),random(255));
+  strokeWeight(4);
+  line(point_x, point_y,point_x2, point_y2);
+  point_x = point_x2;
+  point_y = point_y2;
+  point_x2 = random(0,500);
+  point_y2 = random(0,500);
+    
+  }}
