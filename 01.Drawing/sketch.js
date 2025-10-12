@@ -7,27 +7,15 @@ function setup() {
 
 function draw() {
   background(255,255,255);
-  let point_x = random(0,500);
-  let point_y = random(0,500);
-  let point_x2 = random(0,500);
-  let point_y2 = random(0,500);
-  
-  for (let i=0; i<100; i=i+1){
-  stroke(random(255),random(255),random(255));
-  strokeWeight(4);
-  line(point_x, point_y,point_x2, point_y2);
-  point_x = point_x2;
-  point_y = point_y2;
-  point_x2 = random(0,500);
-  point_y2 = random(0,500);
-
-  stroke(0, 0, 0);
-  square(200, 200, 100);
-
-  textSize(10);
-  strokeWeight(1);
-  textAlign(CENTER, CENTER);
-  text('everything is okay', width / 2, height / 2);
-
+  rect(0,50,150,50);
     
-  }}
+  arc(350, 250, 100, 100, PI+ HALF_PI, PI, CHORD);
+  circle(350, 400, 200);
+
+
+  arc(50, 300, 50, 50, 0, PI + HALF_PI, PIE);
+  line(50, 325, 50, 400);
+
+  bezier(150,100,150,100,300,300,250,250);
+
+  }
