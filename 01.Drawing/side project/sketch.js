@@ -25,7 +25,7 @@ function draw() {
   square(200, 200, 100);
 
   textSize(10);
-  strokeWeight(1);
+  strokeWeight(0.5);
   textAlign(CENTER, CENTER);
   text('everything is okay', width / 2, height / 2);
 
