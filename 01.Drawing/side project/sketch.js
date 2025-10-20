@@ -1,11 +1,10 @@
 function setup() {
   createCanvas(500, 500);
-  frameRate(15);
-  
+  frameRate(15); 
 }
 
 function draw() {
-  background(255,255,255);
+  background(255,100);
   let point_x = random(0,500);
   let point_y = random(0,500);
   let point_x2 = random(0,500);
@@ -20,7 +19,7 @@ function draw() {
   point_x2 = random(0,500);
   point_y2 = random(0,500);
 
-  stroke(0, 0, 0);
+  stroke(0,0,0);
   square(200, 200, 100);
 
   textSize(random(5,15));
