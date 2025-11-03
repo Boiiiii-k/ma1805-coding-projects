@@ -1,1 +1,12 @@
 # ma1805-coding-projects
+01)Drawing
+In this project I wanted to try recreate the meme with the greedy man taking all the water from the pipe by just using the most basic shapes,lines and colour. It turned out a little different that what I orignally wanted; I wanted to have the water curve to man's mouth but I couldn't work out how to use the curve tools and even if I did I couldn't fill the space inbetween the lines with blue. So I decided to just use the quadrilateral function to make it instead. Overall I think i did pretty well to replicate the meme down to the colours, its messaging of corrupt people, and the uncanny look to the two people
+
+02)Movement
+This project was made to represent my brain and how its constantly thinking, jumping to different ideas and overall being a chaotic mess but i am constantly reminded that everything will be ok. Since I already have some programming experience, I made this piece pretty early on. However, i was unfamiliar to this language and got stuck on a particular problem. i wanted the lines to appear one at a time however the logic in the code ran it so that it displays 100 lines drawn simultaneously. i figured out i had to write it in a completely different way so that the draw function doesn't draw 100 a frame and only does it once.
+
+03)Multiples
+This project was inspired by a video explaining why hexagons are the best shape. They detailed how it comes up everywhere and how it helps in nature and our daily life. I wanted to try tile the canvas with hexagons to mimic a bee hive. However, I ran into issues with the spacing of hexagons as the method causes them to be aligned at the centre of the canvas so I had to do some trial and error to fix the issue and had to create two sets of them with 2 for loops for each.
+
+04)Media
+For this project, I used my Rubix cube to create a sort of mock tutorial on how to solve it. There are two versions, the simple one where i tested if the concept would work and a complex version where it shows more sides. 
