@@ -5,11 +5,13 @@ function setup() {
 
 function draw() {
   background(255,100);
+  //beginning point
   let point_x = random(0,500);
   let point_y = random(0,500);
   let point_x2 = random(0,500);
   let point_y2 = random(0,500);
   
+  //draw lines
   for (let i=0; i<random(100,200); i=i+1){
   stroke(random(255),random(255),random(255));
   strokeWeight(2);
@@ -22,6 +24,7 @@ function draw() {
   stroke(0,0,0);
   square(200, 200, 100);
 
+  //text in the middle
   textSize(random(5,15));
   strokeWeight(0.5);
   textAlign(CENTER, CENTER);

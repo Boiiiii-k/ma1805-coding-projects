@@ -23,6 +23,7 @@ function draw() {
   image(listofimg[index], 0, 0, width, height);
 }
 
+//switch to next layer on mouse press
 function mousePressed() {
 index++;
 if (index >= listofimg.length) {

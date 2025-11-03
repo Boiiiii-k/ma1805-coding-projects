@@ -5,6 +5,7 @@ function setup() {
 function draw() {
   background(220);
   
+  // draw first set of hexagons
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 15; j++) {
       let x = i * 60 - 210;
@@ -18,6 +19,8 @@ function draw() {
       pop();
     }
   }
+
+  // draw second set of hexagons offset
   for (let k = 0; k < 9; k++) {
     for (let l = 0; l < 15; l++) {
       let x = k * 60 - 240;

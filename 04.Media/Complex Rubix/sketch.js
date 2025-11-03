@@ -5,6 +5,7 @@ let images = [];
 let stageindex = 0;
 let angleindex = 0;
 
+//finds file paths and loads images into 2D array
 function preload() {
   for (let i = 0; i < layers.length; i++) {
     images[i] = [];
@@ -25,11 +26,13 @@ function draw() {
   image(images[stageindex][angleindex], 0, 0, width, height);
 }
 
+//switch to next layer on mouse press
 function mousePressed() {
   stageindex = (stageindex + 1) % layers.length;
   angleindex = 0;
 }
 
+//change angle with arrow keys
 function keyPressed() {
   if (keyCode === RIGHT_ARROW) {
     let currentStage = layers[stageindex];
