@@ -1,37 +1,34 @@
 function setup() {
-  createCanvas(400, 400);
-  frameRate(15);
+  createCanvas(500, 500, WEBGL);
 }
-
-let words = ['hello', 'world', 'this', 'is', 'life']
-let nums = [0 ,10, 20, 30, 40];
-let k = 0;
 
 function draw() {
   background(220);
-    for(let i=0; i<=390; i=i+10){
-      let r = random(0,50);
-      fill(random(255), random(255), random(255));
-  	  circle(i, i, r);
+  
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 15; j++) {
+      let x = i * 60 - 210;
+      let y = j * 35 - 230;
+      push();
+      translate(x, y);
+      fill(255, 213, 3);
+      ellipse(0, 0, 40, 40, 6);
+      fill(239, 140, 1);
+      ellipse(0, 0, 25, 25, 6);
+      pop();
+    }
   }
-
-  let j = 1;
-  while(j<=400){
-    let r2 = random(0,50);
-    fill(random(255), random(255), random(255));
-    circle(400 - j, j, r2);
-    j = j + 10;
-  } 
-
-  textSize(60);
-  textAlign(CENTER, CENTER);
-  fill(0);
-  text(words[k],nums[k]*10, nums[k]*10);
-}
-
-function mousePressed(){
-  k++;
-  if (k >= words.length){
-    k = 0;
+  for (let k = 0; k < 9; k++) {
+    for (let l = 0; l < 15; l++) {
+      let x = k * 60 - 240;
+      let y = l * 35 - 250;
+      push();
+      translate(x, y);
+      fill(255, 213, 3);
+      ellipse(0, 0, 40, 40, 6);
+      fill(239, 140, 1);
+      ellipse(0, 0, 25, 25, 6);
+      pop();
+    }
   }
 }
