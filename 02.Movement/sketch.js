@@ -1,21 +1,26 @@
+let point_x;
+let point_y;
+let point_x2;
+let point_y2;
+
 function setup() {
   createCanvas(500, 500);
   frameRate(15); 
+  //beginning point
+  point_x = random(0,500);
+  point_y = random(0,500);
+  point_x2 = random(0,500);
+  point_y2 = random(0,500);
 }
 
 function draw() {
-  background(255,100);
-  //beginning point
-  let point_x = random(0,500);
-  let point_y = random(0,500);
-  let point_x2 = random(0,500);
-  let point_y2 = random(0,500);
-  
+  background(255,30);
+
   //draw lines
-  for (let i=0; i<random(100,200); i=i+1){
   stroke(random(255),random(255),random(255));
   strokeWeight(2);
   line(point_x, point_y,point_x2, point_y2);
+
   point_x = point_x2;
   point_y = point_y2;
   point_x2 = random(0,500);
@@ -29,4 +34,4 @@ function draw() {
   strokeWeight(0.5);
   textAlign(CENTER, CENTER);
   text('everything is okay', random(245,255), random(250,255));
-  }}
+  }
