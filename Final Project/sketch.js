@@ -1,40 +1,92 @@
-//let eyeball = [
-//    { x: 0,   y: -40 },
-//    { x: 40,  y: 0 },
-//    { x: 0,   y: 40 },
-//    { x: -40, y: 0 }
-//];
-//let pupils = []
+let eyelocations = [];
+let player;
 
 function setup() {
-  createCanvas(400,400)
+  createCanvas(windowWidth, windowHeight);
+  let minDist = 120;
+
+  for (let i = 0; i < 50; i++) {
+    let x, y;
+    let valid = false;
+
+    while (!valid) {
+      x = random(60, width - 60);
+      y = random(60, height - 60);
+
+      valid = true;
+
+      for (let e of eyelocations) {
+        let d = dist(x, y, e[0], e[1]);
+        if (d < minDist) {
+          valid = false; 
+          break;
+        }
+      }
+    }
+    eyelocations.push([x, y]);
+  }
+    player = new Player(0, height / 2, 30);
 }
 
-function CreateEye(xy) {
-  // eye
+class Player {
+  constructor(x, y, size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.speed = 5;
+  }
+
+  move() {
+    if (keyIsDown(87) || keyIsDown(UP_ARROW)) {
+      this.y -= this.speed;
+    }
+    if (keyIsDown(65) || keyIsDown(LEFT_ARROW)) {
+      this.x -= this.speed;
+    }
+    if (keyIsDown(83) || keyIsDown(DOWN_ARROW)) {
+      this.y += this.speed;
+    }
+    if (keyIsDown(68) || keyIsDown(RIGHT_ARROW)) {
+      this.x += this.speed;
+    }
+
+    this.x = constrain(this.x, 0, width - this.size)
+    this.y = constrain(this.y, 0, height - this.size)
+  }
+
+  show() {
+    square(this.x, this.y, this.size);
+  }
+}
+
+function CreateEye(eyeball_x,eyeball_y,target_x,target_y) {
+  // Eye ball
+  strokeWeight(2);
   fill(255);
-  circle(xy[0],xy[1],50);
-  // eyeball
-  fill(0);
-  circle(xy[0],xy[1],10);
-  //quad(eyeball[0].x,eyeball[0].y,
-  //eyeball[1].x,eyeball[1].y,
-  //eyeball[2].x,eyeball[2].y,
-  //eyeball[3].x,eyeball[3].y,
-  //)
-}
+  ellipse(eyeball_x, eyeball_y, 65);
+  strokeWeight(3)
+  quad(eyeball_x-30, eyeball_y,eyeball_x,eyeball_y-60,eyeball_x+30,eyeball_y,eyeball_x,eyeball_y+60);
+  
 
+  let pupil_x = eyeball_x
+  let pupil_y = eyeball_y
+
+  pupil_x = map(target_x, 0, windowWidth, pupil_x-10, pupil_x+10, true);
+  pupil_y = map(target_y, 0, windowHeight, pupil_y-10, pupil_y+10, true);
+
+  // Pupils
+  fill(0);
+  ellipse(pupil_x, pupil_y, 25);
+}
 
 function draw() {
   background(220); 
-  let xy;
 
-  // Left eye
-  xy = [100, 100]; 
-  CreateEye(xy);
+  player.move();
+  player.show();
 
-  // Left eye
-  xy = [200, 100]; 
-  CreateEye(xy);
-
+  eyelocations.forEach(function(eye) {
+    CreateEye(eye[0], eye[1],player.x,player.y); 
+  });
+  
 }
