@@ -5,3 +5,5 @@ This project started of very slow trying to get the core mechanic to work which 
 After that, I added the player class which is something I've had experience in before and then the room function which was the next hardest part as i already knew a way of doing it but it wouldn't be applicable here in p5js so I decided to start from scratch and evantually found a way to send players into the next room through collisions and arrays.
 
 After adding those main mechanics everything else was about adding asthetics and extra parts that would make it stand out more and to make it a bit more horrifying.
+
+https://github.com/Boiiiii-k/ma1805-coding-projects.git
